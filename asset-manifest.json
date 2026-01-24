@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ShiroBot/static/css/main.3b71cc2a.css",
+    "main.js": "/ShiroBot/static/js/main.e52ae8c9.js",
+    "static/js/453.3fb59529.chunk.js": "/ShiroBot/static/js/453.3fb59529.chunk.js",
+    "index.html": "/ShiroBot/index.html",
+    "main.3b71cc2a.css.map": "/ShiroBot/static/css/main.3b71cc2a.css.map",
+    "main.e52ae8c9.js.map": "/ShiroBot/static/js/main.e52ae8c9.js.map",
+    "453.3fb59529.chunk.js.map": "/ShiroBot/static/js/453.3fb59529.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3b71cc2a.css",
+    "static/js/main.e52ae8c9.js"
+  ]
+}
