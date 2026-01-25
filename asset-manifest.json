@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ShiroBot/static/css/main.3b71cc2a.css",
-    "main.js": "/ShiroBot/static/js/main.52340d7f.js",
+    "main.js": "/ShiroBot/static/js/main.4231c780.js",
     "static/js/453.3fb59529.chunk.js": "/ShiroBot/static/js/453.3fb59529.chunk.js",
     "index.html": "/ShiroBot/index.html",
     "main.3b71cc2a.css.map": "/ShiroBot/static/css/main.3b71cc2a.css.map",
-    "main.52340d7f.js.map": "/ShiroBot/static/js/main.52340d7f.js.map",
+    "main.4231c780.js.map": "/ShiroBot/static/js/main.4231c780.js.map",
     "453.3fb59529.chunk.js.map": "/ShiroBot/static/js/453.3fb59529.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3b71cc2a.css",
-    "static/js/main.52340d7f.js"
+    "static/js/main.4231c780.js"
   ]
 }
