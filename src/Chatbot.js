@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { sendMessage, generateImage } from "./api";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
+import Spinner from 'react-bootstrap/Spinner';
 
 
 function Chatbot() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [imageUrl, setImageUrl] = useState(null);
+  const [serverStatus, setServerStatus] = useState(false)
 
   const handleChat = async () => {
     const userMsg = { role: "you", content: input };
@@ -23,8 +26,37 @@ function Chatbot() {
     setImageUrl(res.image_url);
   };
 
+  const checkServerStatus = async () => {
+    setServerStatus(false);
+    try {
+      const res = await fetch("https://chatbotback-7zvm.onrender.com/"); 
+      if (res.ok) {
+        setServerStatus(true);
+      } else {
+        setServerStatus(false);
+      }
+    } catch (error) {
+      setServerStatus(false);
+    }
+  };
+
+    useEffect(() => {
+    checkServerStatus();
+    const interval = setInterval(checkServerStatus, 30000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div style={{ padding: 20 }}>
+       <Alert key="info1" variant="info">
+          {
+              serverStatus ? 
+              <>Server is currently <b><u>running</u></b></>
+              :
+              <>Server is currently <b><u>asleep </u><Spinner animation="border" size="sm" role="status" style={{ verticalAlign: 'middle' }} /></b></>
+          }
+      </Alert>
+
       <h2>Shiro-Bot 🤖</h2>
 
       <div>
