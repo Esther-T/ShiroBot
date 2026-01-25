@@ -10,7 +10,7 @@ export async function sendMessage(message) {
   });
 
   if (!response.ok) {
-    throw new Error("Failed to send message");
+    return "😅 I'd love to keep talking, but I've hit my daily limit. Even AIs need boundaries. Come hang out with me again tomorrow!"
   }
 
   return response.json();
