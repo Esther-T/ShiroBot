@@ -1,21 +1,32 @@
 const API_BASE_URL = "https://chatbotback-7zvm.onrender.com";
 
 export async function sendMessage(message) {
-  const response = await fetch(`${API_BASE_URL}/chat`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ message }),
-  });
+  try{
+     const response = await fetch(`${API_BASE_URL}/chat`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message }),
+    });
 
-  if (!response.ok) {
+    if (!response.ok) {
+      return Promise.resolve({
+          reply: "😅 I'd love to keep talking, but I've hit my daily limit. Even AIs need boundaries. Please come back tomorrow!",
+          error: true,
+          status: response.status,
+        });
+      }
+  }
+  catch {
     return Promise.resolve({
-        reply: "😅 I'd love to keep talking, but I've hit my daily limit. Even AIs need boundaries. Please come back tomorrow!",
-        error: true,
-        status: response.status,
-      });
-    }
+          reply: "😅 I'd love to keep talking, but I've hit my daily limit. Even AIs need boundaries. Please come back tomorrow!",
+          error: true,
+          status: response.status,
+        });
+      }
+  }
+ 
 
   return response.json();
 }
