@@ -70,7 +70,7 @@ function Chatbot() {
           value={input} 
           onChange={e => setInput(e.target.value)} 
           style={{ width: '100%' }}/>
-      <Button onClick={handleChat} className="mt-2">
+      <Button onClick={handleChat} className="mt-2" disabled={!serverStatus}>
               Send
       </Button>
       {/* <button onClick={handleImage}>Generate Image</button> */}
