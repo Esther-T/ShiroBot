@@ -10,8 +10,12 @@ export async function sendMessage(message) {
   });
 
   if (!response.ok) {
-    return "😅 I'd love to keep talking, but I've hit my daily limit. Even AIs need boundaries. Come hang out with me again tomorrow!"
-  }
+    return Promise.resolve({
+        reply: "😅 I'd love to keep talking, but I've hit my daily limit. Even AIs need boundaries. Please come back tomorrow!",
+        error: true,
+        status: response.status,
+      });
+    }
 
   return response.json();
 }
