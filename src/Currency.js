@@ -16,7 +16,8 @@ function Currency() {
 		try {
 		  const res = await fetch("https://chatbotback-7zvm.onrender.com/currency"); 
 		  if (res.ok) {
-			setCurrency(res.currency);
+			const data = await res.json();   
+			setCurrency(data.currency);   
 		  } 
 		} catch (error) {
 		}
