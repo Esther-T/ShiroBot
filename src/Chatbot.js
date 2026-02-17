@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { sendMessage, generateImage } from "./api";
+import Currency from './Currency'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
@@ -56,7 +57,7 @@ function Chatbot() {
               <>Server is currently <b><u>asleep </u><Spinner animation="border" size="sm" role="status" style={{ verticalAlign: 'middle' }} /></b></>
           }
       </Alert>
-
+	  <Currency />
       <h2>Shiro-Bot 🤖</h2>
 
       <div>
